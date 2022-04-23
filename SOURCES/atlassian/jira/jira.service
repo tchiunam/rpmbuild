@@ -1,0 +1,14 @@
+[Unit]
+Description=Atlassian Jira Service
+Documentation=https://www.atlassian.com/software/jira
+After=network.target
+
+[Service]
+Type=forking
+Environment="JAVA_HOME=/usr/java/jdk1.8.0_66x64"
+ExecStart=/opt/atlassian/jira/bin/start-jira.sh
+ExecStop=/opt/atlassian/jira/bin/stop-jira.sh
+User=doadmin
+
+[Install]
+WantedBy=multi-user.target

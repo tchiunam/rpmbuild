@@ -1,0 +1,14 @@
+[Unit]
+Description=Atlassian Confluence Service
+Documentation=https://www.atlassian.com/software/confluence
+After=network.target
+
+[Service]
+Type=forking
+Environment="JAVA_HOME=/usr/java/jdk1.8.0_66x64"
+ExecStart=/opt/atlassian/confluence/bin/start-confluence.sh
+ExecStop=/opt/atlassian/confluence/bin/stop-confluence.sh
+User=doadmin
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,14 @@
+[Unit]
+Description=Atlassian Bitbucket Service
+Documentation=https://www.atlassian.com/software/bitbucket
+After=network.target
+
+[Service]
+Type=forking
+Environment="JAVA_HOME=/usr/java/jdk1.8.0_66x64" "BITBUCKET_HOME=/data/bitbucket"
+ExecStart=/opt/atlassian/bitbucket/bin/start-bitbucket.sh
+ExecStop=/opt/atlassian/bitbucket/bin/stop-bitbucket.sh
+User=doadmin
+
+[Install]
+WantedBy=multi-user.target

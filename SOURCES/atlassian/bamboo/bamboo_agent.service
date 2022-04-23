@@ -1,0 +1,14 @@
+[Unit]
+Description=Atlassian Bamboo Agent Service
+Documentation=https://www.atlassian.com/software/bamboo
+After=network.target
+
+[Service]
+Type=forking
+Environment="PATH=/usr/java/jdk1.8.0_66x64/bin:/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin"
+ExecStart=/data/bamboo_agent/bin/bamboo-agent.sh start
+ExecStop=/data/bamboo_agent/bin/bamboo-agent.sh stop
+User=doadmin
+
+[Install]
+WantedBy=multi-user.target
