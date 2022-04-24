@@ -1,0 +1,15 @@
+[tregonai-devops-main]
+name=DevOps Main Yum Repository for Centos OS_VERSION
+baseurl=http://doyum.hk.tregonai.com/yum-repos/centos/OS_VERSION/devops/$basearch
+enabled=1
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-DevOps
+priority=1
+
+[tregonai-devops-development]
+name=DevOps Development Yum Repository for Centos OS_VERSION
+baseurl=http://devdoyum.hk.tregonai.com/yum-repos/centos/OS_VERSION/devops/$basearch
+enabled=0
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-DevOps
+priority=2
