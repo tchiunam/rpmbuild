@@ -1,0 +1,13 @@
+[Unit]
+Description=Sonatype Nexus Service
+Documentation=https://www.sonatype.com/products/nexus-repository
+After=network.target
+
+[Service]
+Type=forking
+ExecStart=/opt/nexus/bin/nexus start
+ExecStop=/opt/nexus/bin/nexus stop
+User=doadmin
+
+[Install]
+WantedBy=multi-user.target
