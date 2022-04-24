@@ -1,0 +1,14 @@
+[Unit]
+Description=SonarQube Service
+Documentation=https://www.sonarqube.org
+After=network.target
+
+[Service]
+Type=forking
+Environment="PATH=/usr/java/jdk1.8.0_66x64/bin:/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin"
+ExecStart=/opt/sonarqube/bin/linux-x86-64/sonar.sh start
+ExecStop=/opt/sonarqube/bin/linux-x86-64/sonar.sh stop
+User=doadmin
+
+[Install]
+WantedBy=multi-user.target
